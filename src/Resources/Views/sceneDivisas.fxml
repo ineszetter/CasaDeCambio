@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SceneDivisasController">
+   <children>
+      <TabPane layoutY="27.0" prefHeight="373.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Lista">
+               <content>
+                  <TableView fx:id="tvDivisas" prefHeight="200.0" prefWidth="200.0">
+                     <columns>
+                        <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+                     </columns></TableView>
+               </content>
+            </Tab>
+          <Tab text="Detalle">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane collapsible="false" layoutX="25.0" layoutY="20.0" prefHeight="175.0" prefWidth="344.0" text="Detalle de Divisas">
+                           <content>
+                              <AnchorPane prefHeight="172.0" prefWidth="365.0">
+                                 <children>
+                                    <TextField fx:id="txtNombre" layoutX="123.0" layoutY="39.0" />
+                                    <TextField fx:id="txtValor" layoutX="123.0" layoutY="84.0" />
+                                    <Label layoutX="25.0" layoutY="43.0" text="Nombre: " />
+                                    <Label layoutX="25.0" layoutY="88.0" text="Valor: " />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
