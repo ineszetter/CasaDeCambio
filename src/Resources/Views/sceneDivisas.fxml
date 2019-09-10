@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -14,21 +15,22 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SceneDivisasController">
    <children>
-      <TabPane layoutY="27.0" prefHeight="373.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tpDivisas" layoutY="27.0" prefHeight="373.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab text="Lista">
+          <Tab fx:id="tabLista" text="Lista">
                <content>
                   <TableView fx:id="tvDivisas" prefHeight="200.0" prefWidth="200.0">
                      <columns>
                         <TableColumn fx:id="colNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="colValor" prefWidth="75.0" text="Valor" />
                      </columns></TableView>
                </content>
             </Tab>
-          <Tab text="Detalle">
+          <Tab fx:id="tabDetalle" text="Detalle">
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <TitledPane collapsible="false" layoutX="25.0" layoutY="20.0" prefHeight="175.0" prefWidth="344.0" text="Detalle de Divisas">
+                        <TitledPane collapsible="false" layoutX="25.0" layoutY="20.0" prefHeight="218.0" prefWidth="344.0" text="Detalle de Divisas">
                            <content>
                               <AnchorPane prefHeight="172.0" prefWidth="365.0">
                                  <children>
@@ -36,6 +38,7 @@
                                     <TextField fx:id="txtValor" layoutX="123.0" layoutY="84.0" />
                                     <Label layoutX="25.0" layoutY="43.0" text="Nombre: " />
                                     <Label layoutX="25.0" layoutY="88.0" text="Valor: " />
+                                    <Button fx:id="btnGuardar" layoutX="213.0" layoutY="137.0" mnemonicParsing="false" onAction="#btnGuardar_ActionPerformed" text="Guardar" />
                                  </children>
                               </AnchorPane>
                            </content>
@@ -48,19 +51,12 @@
       </TabPane>
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="mniNuevo" mnemonicParsing="false" onAction="#mniNuevo_ActionPerformed" text="Nuevo" />
+                  <MenuItem fx:id="mniEditar" mnemonicParsing="false" onAction="#mniEditar_ActionPerformed" text="Editar" />
+                  <MenuItem fx:id="mniBorrar" mnemonicParsing="false" onAction="#mniBorrarActionPerformed" text="Borrar" />
+                  <MenuItem fx:id="mniCancelar" mnemonicParsing="false" onAction="#mniCancelar_ActionPerformed" text="Cancelar" />
             </items>
           </Menu>
         </menus>

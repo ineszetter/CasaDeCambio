@@ -28,7 +28,7 @@ public class CasaDeCambio extends Application {
             Parent root; //Defino padre o raíz del documento
 
             //Cargo la ventana al escenario o raíz del documento
-            root = FXMLLoader.load(getClass().getResource("/Resources/Views/sceneDivisas.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/Resources/Views/sceneContenedor.fxml"));
 
             //Creo un nuevo escenario y le asigno la raíz
             Scene scene = new Scene(root);

@@ -5,6 +5,10 @@
  */
 package Beans;
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -15,11 +19,19 @@ import javafx.beans.property.StringProperty;
 public class Divisa {
 
     private final StringProperty nombre;
-//    private DoubleProperty valor;
+    private DoubleProperty valor;
+    private IntegerProperty id;
 
     //Constructor con propiedades
-    public Divisa(String nombre) {
+    public Divisa(String nombre, double valor, int id) {
         this.nombre = new SimpleStringProperty(nombre);
+        this.valor = new SimpleDoubleProperty(valor);
+        this.id = new SimpleIntegerProperty(id);
+    }
+
+    public Divisa(String nombre, double valor) {
+        this.nombre = new SimpleStringProperty(nombre);
+        this.valor = new SimpleDoubleProperty(valor);
     }
 
     public void setNombre(String Nombre) {
@@ -34,11 +46,28 @@ public class Divisa {
         return nombre;
     }
 
-//    public void setValor(double Valor) {
-//        valor = Valor;
-//    }
-//
-//    public double getValor() {
-//        return valor;
-//    }
+    public double getValor() {
+        return valor.get();
+    }
+
+    public void setValor(double Valor) {
+        this.valor.set(Valor);
+    }
+
+    public DoubleProperty valorProperty() {
+        return valor;
+    }
+
+    public int getID() {
+        return id.get();
+    }
+
+    public void setID(int ID) {
+        this.id.set(ID);
+    }
+
+    public IntegerProperty IDProperty() {
+        return id;
+    }
+
 }
